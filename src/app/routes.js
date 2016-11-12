@@ -14,7 +14,10 @@ module.exports = function(app) {
 			});
 
 		res.render("chat", {
-			user: username
+			user: username,
+			scripts: [
+				"/js/chat.js"
+			]
 		});
 	});
 };

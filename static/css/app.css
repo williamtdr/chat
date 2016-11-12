@@ -104,3 +104,8 @@ body {
 	color: #7f8c8d;
 	font-style: italic;
 }
+
+.message-user {
+	color: #d35400;
+	margin-right: 5px;
+}
