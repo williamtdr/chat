@@ -11,12 +11,60 @@ body {
 	display: none;
 }
 
-#login-form > form {
-	margin-top: 15px;
+#login-form-bg {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: url(../bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#login-form {
+	background: rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	width: 420px;
+	height: 180px;
+	position: absolute;
+	right: 50px;
+	top: calc(50% - 90px);
+	border-radius: 5px;
+}
+
+#login-form > h1 {
+	margin-top: 0;
+	font-size: 1.8em;
+	font-family: "Raleway";
+	margin-bottom: 15px;
+}
+
+#login-form > form > input {
+	margin-top: 20px;
+	background-color: transparent;
+	outline: none !important;
+	box-shadow: none !important;
+	border-color: none !important;
+	color: white;
+	width: 300px;
+	display: inline-block;
+	margin-right: 15px;
+}
+
+#login-form > form > button {
+	display: inline-block;
+    vertical-align: 2%;
 }
 
 #login-form > #error {
 	margin: 10px;
+}
+
+#login-form > p {
+	margin-bottom: 0;
 }
 
 #header {
