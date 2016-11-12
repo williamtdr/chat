@@ -10,3 +10,7 @@ body {
 .animsition {
 	display: none;
 }
+
+#login-form > form {
+	margin-top: 15px;
+}

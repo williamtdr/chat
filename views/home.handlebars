@@ -1,3 +1,11 @@
-<div class="animsition container zoom-in-sm" data-animsition-in-duration="750" style="margin-top: 15px">
-	Hello world! Time to take you on.
+<div class="animsition container zoom-in-sm" data-animsition-in-duration="750" style="margin-top: 15px" id="login-form">
+	<h1>Welcome to CatChat!</h1>
+	<p>
+		We're a friendly community where anyone can talk about their favorite cats. Type a username to get started.
+	</p>
+	<form action="/chat" method="post">
+		<input type="text" id="username" placeholder="Username" class="form-control">
+
+		<button type="submit" class="btn btn-primary" style="margin-top: 15px">Go!</button>
+	</form>
 </div>
