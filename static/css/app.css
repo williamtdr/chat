@@ -14,3 +14,93 @@ body {
 #login-form > form {
 	margin-top: 15px;
 }
+
+#login-form > #error {
+	margin: 10px;
+}
+
+#header {
+	background-color: #d35400;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+	z-index: 2000;
+	padding-left: 15px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+#logo {
+	font-family: "Raleway";
+	font-size: 1.4em;
+}
+
+#chat-messages {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: calc(100% - 200px);
+	height: 100%;
+	background-color: #ecf0f1;
+	padding: 15px;
+	padding-top: 65px;
+	line-height: 2;
+}
+
+#user-list {
+	background-color: #c0392b;
+	right: 0;
+	top: 0;
+	height: 100%;
+	padding-top: 65px;
+	width: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: absolute;
+}
+
+#user-list > ul {
+	list-style-type: none;
+	padding-left: 5px;
+}
+
+#chat-input {
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	width: calc(100% - 200px);
+	height: 48px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#chat-input > input {
+	border: 2px solid #7f8c8d;
+}
+
+#chat-input > input:active {
+	outline: none;
+	box-shadow: none;
+}
+
+#user {
+	float: right;
+	font-size: 1.2em;
+	color: #ecf0f1;
+	padding-top: 3px;
+	padding-right: 8px;
+}
+
+.message {
+	color: #06090C;
+}
+
+.message-system {
+	color: #7f8c8d;
+	font-style: italic;
+}

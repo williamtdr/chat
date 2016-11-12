@@ -3,7 +3,7 @@
 const express = require("express"),
 	  exphbs = require("express-handlebars"),
 	  compression = require("compression"),
-	  cookieParser = require("cookie-parser"),
+	  bodyParser = require("body-parser"),
 	  fs = require("fs"),
 	  ws = require("ws"),
 	  server = require("http").createServer(),
@@ -28,7 +28,9 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 app.use(compression());
-app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 app.use(express.static("static"));
 app.use((req, res, next) => {
 	if(req.path.indexOf("js") === -1 && req.path.indexOf("css") === -1 && req.path.indexOf("favicon") === -1)

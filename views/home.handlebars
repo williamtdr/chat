@@ -3,8 +3,11 @@
 	<p>
 		We're a friendly community where anyone can talk about their favorite cats. Type a username to get started.
 	</p>
+	{{#if error}}
+	<span style="color: #c0392b" id="error">{{error}}</span>
+	{{/if}}
 	<form action="/chat" method="post">
-		<input type="text" id="username" placeholder="Username" class="form-control">
+		<input type="text" name="username" placeholder="Username" class="form-control">
 
 		<button type="submit" class="btn btn-primary" style="margin-top: 15px">Go!</button>
 	</form>
