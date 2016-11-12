@@ -16,6 +16,18 @@ function broadcast(event, message) {
 	}
 }
 
+function sendClientList() {
+	let users = [];
+
+	for(let cid in clients) {
+		let client = clients[cid];
+
+		users.push(client.name);
+	}
+
+	broadcast("userlist", users);
+}
+
 module.exports = function(wss) {
 	wss.on("connection", (connection) => {
 		console.log("[Websocket] Client connected.");
@@ -33,6 +45,7 @@ module.exports = function(wss) {
 						};
 
 						broadcast("join", message.data);
+						sendClientList();
 					break;
 					case "message":
 						broadcast("message", [clients[connection.upgradeReq.headers["sec-websocket-key"]].name, message.data]);
@@ -43,10 +56,10 @@ module.exports = function(wss) {
 		connection.on("close", () => {
 			try {
 				console.log("[Chat] " + clients[connection.upgradeReq.headers["sec-websocket-key"]].name + " left the server.");
+				broadcast("leave", clients[connection.upgradeReq.headers["sec-websocket-key"]].name);
 
 				delete clients[connection.upgradeReq.headers["sec-websocket-key"]];
-
-				broadcast("leave", message.data);
+				sendClientList();
 			} catch(e) {}
 		});
 	});

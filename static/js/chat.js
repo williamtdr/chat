@@ -37,6 +37,14 @@ ws.onmessage = function(message) {
 		break;
 		case "message":
 			messageContainer.append("<div class=\"message\"><span class=\"message-user\">" + data[0] + "</span><span class=\"message-content\">" + data[1] + "</span></div>");
+		break;
+		case "userlist":
+			var userstring = "";
+
+			for(var clientIndex in data)
+				userstring += "<li>" + data[clientIndex] + "</li>";
+
+			$("#user-list ul").html(userstring);
 	}
 };
 
